@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEO LEARN — Future Learning</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-grid"></div>
+<header class="topbar">
+  <button class="menu" id="menuBtn">☰</button>
+  <div class="brand"><span class="logo">N</span><div><b>NEO LEARN</b><small>Future Learning Platform</small></div></div>
+  <div class="top-actions"><span id="progressTop">0%</span><button id="themeBtn" aria-label="تغيير الإضاءة" title="تغيير الإضاءة">◐</button><button id="langBtn" aria-label="Change language" title="Change language">EN</button></div>
+</header>
+
+<div class="layout">
+<aside id="sidebar">
+  <div class="side-title">المسار الدراسي</div>
+  <button class="nav-item active" data-view="home">⌂ الرئيسية</button>
+  <button class="nav-item" data-view="progress">◉ التقدم</button>
+  <button class="nav-item" data-view="weeks">▦ الأسابيع الـ16</button>
+  <button class="nav-item" data-view="projects">⚡ المشاريع</button>
+  <button class="nav-item" data-view="electronics">⚡ الإلكترونيات</button>
+  <button class="nav-item" data-view="ai">🧠 الذكاء الاصطناعي</button>
+  <button class="nav-item" data-view="achievements">★ الإنجازات</button>
+  <div class="side-title">الأسابيع</div>
+  <div id="weekNav"></div>
+</aside>
+
+<main>
+<section id="home" class="view active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">SYSTEM ONLINE • 16 WEEKS</div>
+      <h1>اتعلم. <span>برمج.</span> ابتكر.</h1>
+      <p>من الذكاء الاصطناعي وTeachable Machine إلى Python والمشاريع التفاعلية — كل المنهج في مكان واحد.</p>
+      <button class="primary" data-view="progress">ابدأ المسار ←</button>
+      <button class="secondary" data-view="weeks">ابدأ التعلم</button>
+    </div>
+    <div class="orb"><div class="orb-core">NEO</div></div>
+  </div>
+  <div class="stats">
+    <div><strong>16</strong><span>أسبوع</span></div>
+    <div><strong>2</strong><span>مشروع أساسي مرفوع</span></div>
+    <div><strong id="doneCount">0</strong><span>أسبوع مكتمل</span></div>
+    <div><strong id="percentHome">0%</strong><span>التقدم</span></div>
+  </div>
+  <div class="section-head"><div><h2>المسار الكامل</h2><p>اختر أي أسبوع للبدء.</p></div></div>
+  <div class="week-grid" id="homeWeeks"></div>
+</section>
+
+<section id="progress" class="view">
+  <div class="section-head">
+    <div><div class="eyebrow">YOUR JOURNEY</div><h2>تقدمك في المسار</h2><p>ابدأ من 0% وشاهد تقدمك يزيد مع كل أسبوع مكتمل.</p></div>
+  </div>
+  <div class="progress-panel">
+    <div class="progress-ring" id="progressRing"><div><strong id="progressBig">0%</strong><span>التقدم</span></div></div>
+    <div class="progress-info">
+      <div class="progress-stat"><strong id="progressWeeks">0 / 16</strong><span>أسابيع مكتملة</span></div>
+      <div class="progress-stat"><strong id="progressRemaining">16</strong><span>أسبوع متبقي</span></div>
+      <div class="progress-stat"><strong>2</strong><span>مشروع أساسي</span></div>
+      <div class="bar large"><i id="progressBar"></i></div>
+      <p>كلما تحدد أسبوعًا كمكتمل، تتحدث الدائرة والشريط والنسبة تلقائيًا.</p>
+      <button class="primary" data-view="weeks">ابدأ التعلم ←</button>
+    </div>
+  </div>
+</section>
+
+<section id="weeks" class="view">
+  <div class="section-head"><div><div class="eyebrow">CURRICULUM</div><h2>الأسابيع الـ16</h2></div><input id="search" placeholder="ابحث في الأسابيع أو الدروس..."></div>
+  <div class="week-grid" id="allWeeks"></div>
+</section>
+
+<section id="weekDetail" class="view">
+  <button class="back" id="backWeeks">← رجوع للأسابيع</button>
+  <div id="detail"></div>
+</section>
+
+<section id="electronics" class="view">
+  <div class="section-head"><div><div class="eyebrow">ELECTRONICS LAB</div><h2 data-i18n="electronicsTitle">قسم الإلكترونيات</h2><p data-i18n="electronicsIntro">اتعلّم الإلكترونيات خطوة بخطوة، وابدأ بالمحاكاة قبل توصيل الدوائر الحقيقية.</p></div></div>
+  <div class="electronics-hero"><div class="electronics-icon">⚡</div><div><h3 data-i18n="electronicsWelcome">من الفكرة إلى الدائرة الذكية</h3><p data-i18n="electronicsWelcomeText">افهم المكونات، جرّب التوصيلات، وبعدها برمج Arduino Uno لمشروعات عملية.</p></div></div>
+  <div class="electronics-grid">
+    <article class="card electronics-card"><div class="num">01 / BASICS</div><h3 data-i18n="elec1">أساسيات الكهرباء</h3><p data-i18n="elec1p">الجهد والتيار والمقاومة، والفرق بين الدائرة المفتوحة والمغلقة، وقانون أوم.</p><span class="badge" data-i18n="beginner">مبتدئ</span></article>
+    <article class="card electronics-card"><div class="num">02 / COMPONENTS</div><h3 data-i18n="elec2">المكونات والحساسات</h3><p data-i18n="elec2p">LED والمقاومات والأزرار والجرس وحساس المسافة Ultrasonic وحساس الحركة.</p><span class="badge" data-i18n="handsOn">تطبيق عملي</span></article>
+    <article class="card electronics-card"><div class="num">03 / ARDUINO</div><h3 data-i18n="elec3">لوحات Arduino</h3><p data-i18n="elec3p">التعرّف على Arduino Uno، والمداخل والمخارج، ورفع أول برنامج باستخدام Arduino IDE.</p><span class="badge">Arduino Uno</span></article>
+    <article class="card electronics-card"><div class="num">04 / CIRCUITS</div><h3 data-i18n="elec4">المحاكاة والتوصيلات</h3><p data-i18n="elec4p">ابنِ دوائر افتراضية واختبرها قبل تنفيذها، باستخدام Wokwi أو Tinkercad Circuits.</p><div class="resources"><a class="resource" href="https://wokwi.com/" target="_blank" rel="noopener">Wokwi ↗</a><a class="resource" href="https://www.tinkercad.com/circuits" target="_blank" rel="noopener">Tinkercad ↗</a></div></article>
+    <article class="card electronics-card"><div class="num">05 / PROJECTS</div><h3 data-i18n="elec5">مشروعات Arduino</h3><p data-i18n="elec5p">إشارة مرور، إضاءة تلقائية، إنذار مسافة، ري نباتات، ثم تطوير مشروع NEO Smart Home.</p><span class="badge">Build & Test</span></article>
+    <article class="card electronics-card"><div class="num">06 / SAFETY</div><h3 data-i18n="elec6">الأمان في التوصيل</h3><p data-i18n="elec6p">استخدم الجهد المنخفض المناسب، وتحقق من القطبية والمقاومات، ولا توصل Arduino مباشرة بكهرباء المنزل.</p><span class="badge" data-i18n="safetyFirst">السلامة أولًا</span></article>
+  </div>
+  <div class="electronics-note"><strong data-i18n="firstChallenge">تحدّيك الأول</strong><p data-i18n="firstChallengeText">شغّل LED باستخدام Arduino Uno ومقاومة مناسبة، ثم عدّل زمن التشغيل والإطفاء.</p><a class="resource" href="https://docs.arduino.cc/built-in-examples/basics/Blink/" target="_blank" rel="noopener" data-i18n="openFirstLesson">افتح درس Blink ↗</a></div>
+</section>
+
+
+<section id="ai" class="view">
+  <div class="section-head"><div><div class="eyebrow">ARTIFICIAL INTELLIGENCE LAB</div><h2 data-i18n="aiTitle">دورة الذكاء الاصطناعي</h2><p data-i18n="aiIntro">افهم الذكاء الاصطناعي وجرّب نماذج التعلّم الآلي وابنِ مشروعاتك خطوة بخطوة.</p></div></div>
+  <div class="electronics-hero ai-hero"><div class="electronics-icon">🧠</div><div><h3 data-i18n="aiWelcome">من الفكرة إلى نموذج ذكي</h3><p data-i18n="aiWelcomeText">ابدأ بالتجارب البسيطة، ثم تعلّم كيف تدرّب نموذجًا وتختبره وتستخدمه في مشروع.</p></div></div>
+  <div class="electronics-grid">
+    <article class="card electronics-card"><div class="num">01 / INTRO</div><h3 data-i18n="ai1">ما هو الذكاء الاصطناعي؟</h3><p data-i18n="ai1p">تعرّف على الذكاء الاصطناعي وتعلّم الآلة والبيانات والأمثلة اليومية.</p><span class="badge" data-i18n="beginner">مبتدئ</span></article>
+    <article class="card electronics-card"><div class="num">02 / TEACHABLE MACHINE</div><h3 data-i18n="ai2">Teachable Machine</h3><p data-i18n="ai2p">اجمع أمثلة لفئات مختلفة، درّب نموذج صور، ثم اختبره بكاميرا أو صور.</p><a class="resource" href="https://teachablemachine.withgoogle.com/train/image" target="_blank" rel="noopener" data-i18n="openTool">افتح الأداة ↗</a></article>
+    <article class="card electronics-card"><div class="num">03 / PYTHON</div><h3 data-i18n="ai3">Python والذكاء الاصطناعي</h3><p data-i18n="ai3p">تدرّب على المتغيرات والشروط والقوائم والدوال، ثم استخدمها في تطبيقات بسيطة.</p><span class="badge">Python</span></article>
+    <article class="card electronics-card"><div class="num">04 / TRAIN & TEST</div><h3 data-i18n="ai4">درّب واختبر النموذج</h3><p data-i18n="ai4p">افهم بيانات التدريب والاختبار، ودقة التوقعات، ولماذا قد يخطئ النموذج.</p><span class="badge" data-i18n="handsOn">تطبيق عملي</span></article>
+    <article class="card electronics-card"><div class="num">05 / PROJECTS</div><h3 data-i18n="ai5">مشروعات الذكاء الاصطناعي</h3><p data-i18n="ai5p">مصنّف صور، مساعد أسئلة وأجوبة بسيط، أو نظام يربط التعرّف على الصور بمشروع إلكتروني.</p><span class="badge">Build & Test</span></article>
+    <article class="card electronics-card"><div class="num">06 / RESPONSIBLE AI</div><h3 data-i18n="ai6">استخدام الذكاء الاصطناعي بمسؤولية</h3><p data-i18n="ai6p">تحقق من النتائج، احترم الخصوصية، ولا ترفع صورًا أو معلومات شخصية دون إذن.</p><span class="badge" data-i18n="safetyFirst">السلامة أولًا</span></article>
+  </div>
+  <div class="tutor-panel">
+    <div class="section-head"><div><div class="eyebrow">NEO LEARNING ASSISTANT</div><h2 data-i18n="tutorTitle">مساعد NEO التعليمي</h2><p data-i18n="tutorIntro">اكتب سؤالًا عن موضوعات الدورة للحصول على شرح مبسط.</p></div></div>
+    <div class="tutor-row"><input id="tutorInput" data-i18n-placeholder="tutorPlaceholder" placeholder="مثال: ما هو التعلّم الآلي؟"><button class="primary" id="tutorAsk" data-i18n="askTutor">اسأل المساعد</button></div>
+    <div id="tutorAnswer" class="tutor-answer" aria-live="polite" data-i18n="tutorDefault">مرحبًا! اسألني عن الذكاء الاصطناعي أو Python أو Arduino.</div>
+    <p class="small-note" data-i18n="tutorNote">هذا مساعد تعليمي تجريبي يعمل بإجابات إرشادية داخل الموقع، وليس متصلًا حاليًا بخدمة ذكاء اصطناعي خارجية.</p>
+  </div>
+  <div class="tutor-panel quiz-panel">
+    <div class="section-head"><div><div class="eyebrow">QUICK CHECK</div><h2 data-i18n="quizTitle">اختبر معلوماتك</h2><p data-i18n="quizIntro">أجب عن الأسئلة القصيرة وتعرّف على نتيجتك فورًا.</p></div></div>
+    <div id="aiQuiz"></div><button class="primary" id="checkQuiz" data-i18n="checkAnswers">تصحيح الإجابات</button><div id="quizResult" class="quiz-result" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="projects" class="view">
+  <div class="section-head"><div><div class="eyebrow">PROJECT LAB</div><h2>المشاريع</h2><p>المشروعان المرفوعان مرفقان داخل حزمة الموقع.</p></div></div>
+  <div class="project-grid" id="projectGrid"></div>
+</section>
+
+<section id="achievements" class="view">
+  <div class="section-head"><div><div class="eyebrow">ACHIEVEMENTS</div><h2>الإنجازات</h2></div></div>
+  <div class="achievement-grid" id="achievementGrid"></div>
+</section>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
